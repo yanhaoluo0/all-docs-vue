@@ -157,6 +157,13 @@ const routes = [
         }
     },
     {
+        path: "/fenlei",
+        name: "fenlei",
+        component: function () {
+            return import("../views/fenlei/Index")
+        }
+    },
+    {
         path: '/userPage',
         name: "userPage",
         redirect: "/userPage/msg",  //重定向到第一个子路由
