@@ -15,58 +15,17 @@
                     <Icon type="ios-analytics"></Icon>
                     导航三
                 </Menu-item>
-                <Menu-item name="4">
-                    <Icon type="ios-paper"></Icon>
-                    导航四
-                </Menu-item>
-            </div>
-        </Menu>
-        <Menu mode="horizontal" active-name="1">
-            <div class="layout-assistant">
-                <Menu-item name="1">二级导航</Menu-item>
-                <Menu-item name="2">二级导航</Menu-item>
-<!--                <Menu-item name="3">二级导航</Menu-item>-->
             </div>
         </Menu>
         <div class="layout-content-1">
             <Row>
-                <i-col span="5">
-                    <Menu active-name="1-2" width="auto" :open-names="['1']">
-                        <Submenu name="1">
-                            <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
-                                导航一
-                            </template>
-                            <Menu-item name="1-1">选项 1</Menu-item>
-                            <Menu-item name="1-2">选项 2</Menu-item>
-                            <Menu-item name="1-3">选项 3</Menu-item>
-                        </Submenu>
-                        <Submenu name="2">
-                            <template slot="title">
-                                <Icon type="ios-keypad"></Icon>
-                                导航二
-                            </template>
-                            <Menu-item name="2-1">选项 1</Menu-item>
-                            <Menu-item name="2-2">选项 2</Menu-item>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                导航三
-                            </template>
-                            <Menu-item name="3-1">选项 1</Menu-item>
-                            <Menu-item name="3-2">选项 2</Menu-item>
-                        </Submenu>
-                    </Menu>
+                <i-col span="5" style="background: #fafafa;padding-left: 5px;">
+                    <c-tree></c-tree>
                 </i-col>
-                <i-col span="5">
-                    <tree></tree>
-                </i-col>
-                <i-col span="5">
-                    <tree-list></tree-list>
-                </i-col>
-                <i-col span="9">
-                    <div class="layout-content-main">内容区域</div>
+                <i-col span="19">
+                    <div class="layout-content-main">
+                        <MyList style="min-height: calc(100vh - 143px); height: 100%"></MyList>
+                    </div>
                 </i-col>
             </Row>
         </div>
@@ -78,8 +37,10 @@
 <script>
 import Tree from "./Tree"
 import TreeList from "./TreeList"
+import CTree from "./VueTree"
+import MyList from "./MyList"
 export default {
-    components: { Tree, TreeList },
+    components: { Tree, TreeList, CTree, MyList },
     data() {
         return {
         }
@@ -117,11 +78,14 @@ export default {
     min-height: calc(100vh - 200);
     margin: 15px;
     overflow: hidden;
-    background: #fff;
     border-radius: 4px;
+    background: #f1f3f5;
 }
 .layout-content-main{
-    padding: 10px;
+    /*padding: 10px;*/
+    height: 100%;
+    border-left: 1px solid #f0f0f0;
+    background: #fff;
 }
 .layout-copy{
     text-align: center;
