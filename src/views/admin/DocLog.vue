@@ -129,8 +129,6 @@ export default {
         },
 
         removeBatch() {
-
-            this.$Message.info('receive cancel');
             let currentSelection = this.$refs.logTable.getSelection();
             if (currentSelection.length < 1) {
                 this.$Message.warning("请勾选！")

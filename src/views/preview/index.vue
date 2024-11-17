@@ -148,6 +148,7 @@ export default {
                         case 'doc':
                             this.component = () => import('@/views/preview/WordView3')
                             break
+                        case 'ppt':
                         case 'pptx':
                             // this.component = () => import('@/views/preview/PPTxView')
                             this.component = () => import('@/views/preview/PptxView2')
